@@ -96,6 +96,10 @@ export const theme: MantineThemeOverride = createTheme({
     xl: '0 20px 25px rgba(0, 0, 0, 0.1)',
   },
 
+  // Dark mode colors
+  white: '#ffffff',
+  black: '#1a1b1e',
+
   components: {
     Button: {
       defaultProps: {
@@ -121,11 +125,6 @@ export const theme: MantineThemeOverride = createTheme({
         shadow: 'sm',
         padding: 'lg',
         radius: 'md',
-      },
-      styles: {
-        root: {
-          border: '1px solid #e0e0e0',
-        },
       },
     },
   },

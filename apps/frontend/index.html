@@ -10,6 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&display=swap" rel="stylesheet">
   </head>
   <body>
+    <script>
+      // FOUC Prevention: Apply theme before React loads
+      (function() {
+        const getColorScheme = () => {
+          const stored = localStorage.getItem('mantine-color-scheme');
+          if (stored === 'light' || stored === 'dark') {
+            return stored;
+          }
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+
+        const colorScheme = getColorScheme();
+        document.documentElement.setAttribute('data-mantine-color-scheme', colorScheme);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
